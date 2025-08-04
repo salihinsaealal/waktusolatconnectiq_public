@@ -105,6 +105,28 @@ This provides immediate visual feedback about your data source status and data f
 - Internet connectivity for live prayer times API (optional)
 - **GPS capability** - For automatic location detection (optional)
 
+## API Configuration
+
+**IMPORTANT**: This app requires you to configure your own prayer times API endpoint.
+
+### Setting Up Your API
+
+1. **Find a Prayer Times API Service**
+   - The app is designed to work with REST APIs that accept latitude/longitude coordinates
+   - API should return prayer times in JSON format
+   - Example API format: `YOUR_API_ENDPOINT/lat,lon`
+
+2. **Configure the API Endpoint**
+   - Edit `source/PrayerDataManager.mc` line ~216
+   - Edit `source/PrayerBackgroundService.mc` line ~139
+   - Replace `YOUR_API_ENDPOINT_HERE` with your actual API URL
+
+3. **API Response Format**
+   - The app expects JSON response with prayer time fields
+   - Modify the parsing logic in `PrayerDataManager.mc` if needed to match your API's response format
+
+**Note**: The original developer does not own or provide the prayer times API service. Users are responsible for finding and configuring their own API endpoint.
+
 ### Steps to Install
 
 1. **Download the code**
@@ -145,7 +167,9 @@ This provides immediate visual feedback about your data source status and data f
 The app uses multiple data sources with automatic fallback:
 
 1. **Live API Data** (Primary)
-   - Fetches prayer times from https://mpt.i906.my/api/prayer/
+   - Fetches prayer times from a third-party prayer times API service
+   - **Note**: The API service is NOT owned by the app developer
+   - Users must configure their own API endpoint in the app settings
    - Uses GPS coordinates or manual coordinates
    - Updates automatically every 15 minutes
    - Indicated by green status circle

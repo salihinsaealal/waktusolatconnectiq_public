@@ -133,7 +133,10 @@ class PrayerBackgroundService extends System.ServiceDelegate {
             var lon = coords["lon"] as Float;
             
             if (lat != null && lon != null) {
-                var url = "https://mpt.i906.my/api/prayer/" + lat.format("%.6f") + "," + lon.format("%.6f");
+                // NOTE: This app uses a third-party prayer times API service.
+                // The API service is NOT owned by the app developer.
+                // Users must configure their own API endpoint in the settings.
+                var url = "YOUR_API_ENDPOINT_HERE/" + lat.format("%.6f") + "," + lon.format("%.6f");
                 
                 var options = {
                     :method => Communications.HTTP_REQUEST_METHOD_GET,

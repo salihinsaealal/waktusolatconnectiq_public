@@ -209,8 +209,11 @@ class PrayerDataManager {
         }
         
         // Make API call with available coordinates
+        // NOTE: This app uses a third-party prayer times API service.
+        // The API service is NOT owned by the app developer.
+        // Users must configure their own API endpoint in the settings.
         if (lat != null && lon != null) {
-            var url = "https://mpt.i906.my/api/prayer/" + lat.format("%.6f") + "," + lon.format("%.6f");
+            var url = "YOUR_API_ENDPOINT_HERE/" + lat.format("%.6f") + "," + lon.format("%.6f");
             
             var options = {
                 :method => Communications.HTTP_REQUEST_METHOD_GET,

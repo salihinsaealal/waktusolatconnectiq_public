@@ -5,6 +5,7 @@
 bin/
 *.prg
 *.iq
+*.mir
 
 # Developer Keys (NEVER commit these!)
 developer_key
