@@ -88,17 +88,22 @@ This provides immediate visual feedback about your data source status and data f
 
 ## Device Compatibility
 
-**Supported Devices:**
-- Garmin Epix 2 (416x416) - Primary optimized layout
-- Garmin Forerunner 255 (260x260) - Device-specific adjustments
-- Garmin Venu 2S (360x360) - Fully optimized
+### Supported Devices
 
-**Multi-Device UI Features:**
-- **Responsive Layout**: Automatically adapts to different screen sizes
-- **Optimized Font Sizing**: Perfect fonts for both supported devices
-- **Consistent Experience**: Same functionality across all supported devices
-- **Manual Font Adjustment**: Developers can customize font sizes in code
+**Multi-Device Support with Responsive Layout:**
+- **Epix 2 (416x416)**: Primary baseline for responsive calculations
+- **Forerunner 255/255M/255S/255SM (260x260)**: Scaled layout with device-specific optimizations
+- **Venu 2S (360x360)**: Responsive scaling from Epix 2 baseline
+- **Fenix 6/6 Pro/6S/6S Pro**: Full compatibility with responsive layout
+- **Edge 1040**: Cycling computer support with adapted interface
 
+**Responsive Design Features:**
+- Automatic scaling based on screen dimensions
+- Font-height-aware positioning for consistent appearance
+- Percentage-based margins and spacing for universal compatibility
+- Generic calculation approach works across all supported devices
+
+---
 **Requirements:**
 - Connect IQ API Level 3.1.0 or higher
 - GPS and Communications permissions

@@ -10,33 +10,71 @@ This guide shows you exactly where to modify the code to customize your Waktu So
 
 ---
 
-## Font Sizing and Device-Specific Adjustments
+## Responsive Design and Device Support
 
-**Updated in v2.0.3**: Perfect font sizing and device-specific optimizations.
+**Updated in v2.0.4**: Universal responsive design with generic calculations for all supported devices.
 
 ### Supported Devices
-- **Epix 2 (416x416)**: Primary optimized layout with `Graphics.FONT_XTINY`
-- **Forerunner 255 (260x260)**: Device-specific adjustments with `Graphics.FONT_XTINY`
-- **Venu 2S (360x360)**: Fully optimized with `Graphics.FONT_XTINY`
+- **Epix 2 (416x416)**: Primary baseline for responsive calculations
+- **Forerunner 255/255M/255S/255SM (260x260)**: Automatic scaling from baseline
+- **Venu 2S (360x360)**: Responsive scaling with font-height awareness
+- **Fenix 6/6 Pro/6S/6S Pro**: Full compatibility with responsive layout
+- **Edge 1040**: Cycling computer support with adapted interface
 
-### Main App Font Customization
+### Responsive Design Features
+- **Automatic Scaling**: Uses Epix 2 (416x416) as baseline, scales to other devices
+- **Font-Height Awareness**: Positioning adapts to actual font dimensions
+- **Percentage-Based Layout**: Margins and spacing use screen percentage ratios
+- **Generic Calculations**: Works universally across all supported devices
+
+### Main App Responsive Design
 **File**: `/source/waktuSolatHomeAssistantView.mc`
-**Lines**: ~220-225
+**Lines**: ~15-29
 
+#### Device Detection and Scaling
 ```monkey-c
-// Font sizing optimized for Epix 2 and Venu 2S
+private function getDeviceInfo(dc as Dc) as Dictionary {
+    var width = dc.getWidth();
+    var height = dc.getHeight();
+    
+    // Epix 2 as baseline (416x416)
+    var scaleFactor = height / 416.0;
+    var isSmallScreen = (height <= 240); // FR245 and similar
+    
+    return {
+        "width" => width,
+        "height" => height,
+        "scaleFactor" => scaleFactor,
+        "isSmallScreen" => isSmallScreen
+    };
+}
+```
+
+#### Font Customization
+```monkey-c
+// Universal font sizing for all devices
 var prayerFont = Graphics.FONT_XTINY;  // ← CHANGE THIS
 var timeFont = Graphics.FONT_XTINY;    // ← CHANGE THIS
 ```
 
-### Glance View Font Customization
+### Glance View Responsive Layout
 **File**: `/source/waktuSolatGlanceView.mc`
-**Lines**: ~30-32
+**Lines**: ~64-87
 
+#### Font Configuration
 ```monkey-c
-// Font sizing optimized for Epix 2 and Venu 2S
+// Universal font sizing for all devices
 var glanceFont = Graphics.FONT_XTINY;  // ← CHANGE THIS
 ```
+
+#### Generic Positioning System
+The glance view now uses a sophisticated responsive positioning system:
+
+- **Middle-Referenced**: All positioning calculated from screen center
+- **Font-Height Aware**: Adapts to actual font dimensions automatically
+- **Percentage-Based**: Uses screen ratios for universal compatibility
+- **Minimum Constraints**: Ensures readability on all devices
+- **Perfect Centering**: Odd bar heights for pixel-perfect alignment
 
 ### Available Font Sizes (from largest to smallest)
 1. `Graphics.FONT_SYSTEM_LARGE`
