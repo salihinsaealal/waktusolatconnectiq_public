@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<iq:manifest version="3" xmlns:iq="http://www.garmin.com/xml/connectiq">
+    <iq:application id="f47ac10b-58cc-4372-a567-0e02b2c3d479" type="watch-app" name="@Strings.AppName" entry="waktuSolatHomeAssistantApp" launcherIcon="@Drawables.LauncherIcon" minApiLevel="3.2.0" version="1.0.0">
+        <iq:products>
+            <iq:product id="epix2"/>
+        </iq:products>
+        <iq:permissions>
+            <iq:uses-permission id="Communications"/>
+            <iq:uses-permission id="Positioning"/>
+        </iq:permissions>
+        <iq:languages>
+            <iq:language>eng</iq:language>
+        </iq:languages>
+        <iq:barrels/>
+    </iq:application>
+</iq:manifest>

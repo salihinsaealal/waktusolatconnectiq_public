@@ -1,0 +1,97 @@
+# Waktu Solat ConnectIQ App - .gitignore
+# Excludes build files, output files, and user-specific files
+
+# Build Output Files
+bin/
+*.prg
+*.iq
+
+# Developer Keys (NEVER commit these!)
+developer_key
+developer_key.der
+*.p12
+*.key
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+
+# Simulator Files
+simulator/
+*.sim
+
+# Garmin SDK Files
+.garmin/
+connectiq-sdk/
+
+# Build Cache
+.build/
+build/
+cache/
+
+# User-specific Configuration
+user_settings.json
+local_config.json
+
+# Documentation Build Files
+docs/_build/
+*.pdf
+
+# Backup Files
+*.bak
+*.backup
+*_backup.*
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Node.js (if using any build tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python (if using any build scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+
+# ConnectIQ Build Artifacts (generated during compilation)
+*.mir
+*.prg
+bin/
+external-mir/
+internal-mir/
+mir/
+
+# ConnectIQ temporary and cache files
+.build/
+.cache/
+*.tmp
+*.temp
+
+# Keep these files
+!README.md
+!CUSTOMIZATION_GUIDE.md
+!LICENSE
+!.gitignore
