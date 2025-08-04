@@ -2,8 +2,6 @@
 
 > **Complete customization reference for fonts, positions, colors, and layout for the lightweight prayer times app**
 
-**Version 2.0.3** - Now with multi-device support and device-specific font sizing!
-
 This guide shows you exactly where to modify the code to customize your Waktu Solat app. All line numbers are approximate and may shift as you make changes.
 
 **Note**: With the new architecture using PrayerDataManager, most data customizations should be done in the PrayerDataManager.mc file rather than individual view files.
