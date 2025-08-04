@@ -173,7 +173,7 @@ The app uses multiple data sources with automatic fallback:
 
 1. **Live API Data** (Primary)
    - Fetches prayer times from a third-party prayer times API service
-   - **Note**: The API service is NOT owned by the app developer
+   - **Note**: The API service is NOT owned by the app developer (Contact me if you want to use API currently used for personal use)
    - Users must configure their own API endpoint in the app settings
    - Uses GPS coordinates or manual coordinates
    - Updates automatically every 15 minutes
@@ -341,7 +341,6 @@ waktuSolatHomeAssistant/
 ### Future Features (v2.2+)
 - **Multiple Calculation Methods** - MWL, ISNA, Egypt, etc.
 - **Prayer Notifications** - Customizable alerts
-- **Qibla Direction** - Compass pointing to Mecca
 - **Islamic Calendar** - Hijri date display
 - **Multi-language Support** - Arabic, Malay, English
 - **Ratio-based UI Scaling** - Dynamic positioning for all device sizes
